@@ -3,8 +3,9 @@ module main
 
 include("demo.jl")
 include("errors.jl")
+include("ladder.jl")
 
-using .Demo, .Errors
+using .Demo, .Errors, .Ladder
 
 # REPL main menu
 function menu()
@@ -13,6 +14,7 @@ function menu()
   println("1 - hello")
   println("2 - for loop")
   println("3 - errors")
+  println("4 - ladder")
   println("--------------")
 end
 
@@ -30,6 +32,8 @@ let
       loop(1:5)
     elseif option == '3'
       error_test();
+    elseif option == '4'
+      ladder();      
     end #if
   end #while
 end #let
